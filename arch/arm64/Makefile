@@ -40,7 +40,7 @@ endif
 brokengasinst := $(call as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n,,-DCONFIG_BROKEN_GAS_INST=1)
 
 ifneq ($(brokengasinst),)
-$(warning Detected assembler with broken .inst; disassembly will be unreliable)
+#$(warning Detected assembler with broken .inst; disassembly will be unreliable)
 endif
 
 KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)
